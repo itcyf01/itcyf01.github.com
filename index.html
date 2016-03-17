@@ -2,10 +2,29 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>无标题文档</title>
+<title>3D-盒子</title>
+<style>
+*{margin:0;paddgin:0;list-style:none;}
+.box{width:300px;height:300px;postion:relative;-webkit-transform-style:preserve-3d;-webkit-transition:2s all ease;margin:100px auto; -webkit-transform:perspective(800px) rotateY(0) rotateX(0);}
+.box div{width:100%;height:100%;position:absolute;left:0;top:0;text-align:center;line-height:300px;font-size:100px;opacity:0.5;}
+.front{background:#0FF;-webkit-transform:translateZ(150px);}
+.back{background:#F00;-webkit-transform:translateZ(-150px) scale(-1,1);}
+.t{background:#F0F;-webkit-transform:translateY(-150px) rotateX(-90deg) scale(-1,1);}
+.b{background:#0F0;-webkit-transform: translateY(150px) rotateX(90deg) scale(-1,-1);}
+.l{background:#3C3; -webkit-transform: translateX(-150px) rotateY(-90deg);}
+.r{background:#00F;-webkit-transform: translateX(150px) rotateY(90deg);}
+.box:active{-webkit-transform:perspective(800px) rotateY(-225deg) rotateX(225deg);}
+</style>
 </head>
 
 <body>
-lalalllll
+	<div class="box">
+		<div class="front">正</div>
+		<div class="back">反</div>
+		<div class="t">上</div>
+		<div class="b">下</div>
+		<div class="l">左</div>
+		<div class="r">右</div>
+	</div>
 </body>
 </html>
